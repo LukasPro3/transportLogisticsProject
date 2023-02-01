@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="354.0" prefWidth="415.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="fxControllers.TruckPage">
+    <children>
+        <TextField fx:id="licensePlateField" layoutX="41.0" layoutY="44.0"/>
+        <Label layoutX="41.0" layoutY="27.0" text="License Plate"/>
+        <TextField fx:id="euroStandardField" layoutX="41.0" layoutY="91.0"/>
+        <TextField fx:id="VINField" layoutX="226.0" layoutY="44.0"/>
+        <TextField fx:id="mileageField" layoutX="226.0" layoutY="91.0"/>
+        <TextField fx:id="horsePowerField" layoutX="41.0" layoutY="139.0"/>
+        <TextField fx:id="powerField" layoutX="226.0" layoutY="139.0"/>
+        <TextField fx:id="colorField" layoutX="41.0" layoutY="188.0"/>
+        <TextField fx:id="fuelTankField" layoutX="226.0" layoutY="188.0"/>
+        <Label layoutX="226.0" layoutY="27.0" text="VIN"/>
+        <Label layoutX="41.0" layoutY="74.0" text="euroStandart"/>
+        <Label layoutX="226.0" layoutY="74.0" text="mileage"/>
+        <Label layoutX="41.0" layoutY="122.0" text="Horse Power"/>
+        <Label layoutX="226.0" layoutY="122.0" text="Power (kw)"/>
+        <Label layoutX="41.0" layoutY="171.0" text="Color"/>
+        <Label layoutX="226.0" layoutY="171.0" text="Fuel Tank Capacity (liters)"/>
+        <Button fx:id="createButton" layoutX="167.0" layoutY="299.0" mnemonicParsing="false" onAction="#createNewTruck"
+                prefHeight="25.0" prefWidth="81.0" text="Create"/>
+        <DatePicker fx:id="technicalInspectionField" layoutX="41.0" layoutY="238.0" prefHeight="25.0"
+                    prefWidth="149.0"/>
+        <Label layoutX="41.0" layoutY="221.0" prefHeight="17.0" prefWidth="115.0" text="Technical inspection"/>
+    </children>
+</AnchorPane>

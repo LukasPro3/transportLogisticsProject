@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="423.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="fxControllers.DriverDetailsPage">
+    <children>
+        <TextField fx:id="nameField" layoutX="41.0" layoutY="42.0"/>
+        <TextField fx:id="surnameField" layoutX="240.0" layoutY="42.0"/>
+        <Label layoutX="41.0" layoutY="25.0" text="First name"/>
+        <Label layoutX="240.0" layoutY="25.0" text="Last name"/>
+        <Label layoutX="41.0" layoutY="83.0" text="Phone number"/>
+        <TextField fx:id="emailField" layoutX="41.0" layoutY="153.0"/>
+        <Label layoutX="41.0" layoutY="136.0" text="email"/>
+        <Button fx:id="closeButton" layoutX="186.0" layoutY="327.0" mnemonicParsing="false" onAction="#closeWindow"
+                text="Close"/>
+        <TextField fx:id="phoneNumberField" layoutX="41.0" layoutY="100.0"/>
+        <DatePicker fx:id="dateOfBirthField" layoutX="240.0" layoutY="100.0" prefHeight="25.0" prefWidth="149.0"/>
+        <Label layoutX="241.0" layoutY="83.0" text="Date of birth"/>
+    </children>
+</AnchorPane>

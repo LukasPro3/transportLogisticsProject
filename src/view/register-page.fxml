@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="fxControllers.RegisterPage">
+    <children>
+        <TextField fx:id="nameField" layoutX="40.0" layoutY="109.0" prefHeight="25.0" prefWidth="166.0"
+                   promptText="Enter Name"/>
+        <TextField fx:id="surnameField" layoutX="219.0" layoutY="109.0" prefHeight="25.0" prefWidth="166.0"
+                   promptText="Enter Surname"/>
+        <TextField fx:id="phoneNumberField" layoutX="40.0" layoutY="200.0" prefHeight="25.0" prefWidth="166.0"
+                   promptText="Enter Your Phone Number"/>
+        <TextField fx:id="emailField" layoutX="40.0" layoutY="154.0" prefHeight="25.0" prefWidth="166.0"
+                   promptText="Enter Email"/>
+        <DatePicker fx:id="dateOfBirthField" layoutX="219.0" layoutY="154.0" prefHeight="25.0" prefWidth="166.0"
+                    promptText="Select Date of Birth"/>
+        <PasswordField fx:id="passwordField" layoutX="219.0" layoutY="288.0" prefHeight="25.0" prefWidth="166.0"
+                       promptText="Enter Password"/>
+        <PasswordField fx:id="password2Field" layoutX="401.0" layoutY="288.0" prefHeight="25.0" prefWidth="166.0"
+                       promptText="Re-enter Password"/>
+        <TextField fx:id="loginField" layoutX="40.0" layoutY="288.0" prefHeight="25.0" prefWidth="166.0"
+                   promptText="Enter Login"/>
+        <Label fx:id="labelRegister" layoutX="223.0" layoutY="20.0" text="Register">
+            <font>
+                <Font size="43.0"/>
+            </font>
+        </Label>
+        <Button fx:id="registerButton" layoutX="422.0" layoutY="343.0" mnemonicParsing="false" onAction="#createNewUser"
+                prefHeight="25.0" prefWidth="124.0" text="Register"/>
+        <Separator layoutX="-1.0" layoutY="82.0" prefHeight="1.0" prefWidth="600.0"/>
+        <Label layoutX="41.0" layoutY="84.0" text="Contact Information">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <Separator layoutX="-1.0" layoutY="260.0" prefHeight="3.0" prefWidth="600.0"/>
+        <Label layoutX="41.0" layoutY="263.0" prefHeight="17.0" prefWidth="124.0" text="User Information">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <ButtonBar fx:id="typeOfUser" layoutX="139.0" layoutY="327.0">
+            <buttons>
+                <RadioButton fx:id="managerField" mnemonicParsing="false" onAction="#disableSelect" text="Manager"/>
+                <RadioButton fx:id="driverField" mnemonicParsing="false" onAction="#disableSelect" text="Driver"/>
+            </buttons>
+        </ButtonBar>
+        <Label layoutX="41.0" layoutY="325.0" prefHeight="21.0" prefWidth="96.0" text="Type Of User:">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Label>
+        <DatePicker fx:id="medicalField" layoutX="219.0" layoutY="200.0" prefHeight="25.0" prefWidth="166.0"
+                    promptText="Medical valid until"/>
+        <DatePicker fx:id="licenseField" layoutX="401.0" layoutY="200.0" promptText="License valid until"/>
+    </children>
+</AnchorPane>

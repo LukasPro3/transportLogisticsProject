@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0"
+            prefWidth="1231.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="fxControllers.MainPage">
+    <children>
+        <TabPane layoutY="55.0" prefHeight="713.0" prefWidth="1231.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="main" text="You">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="yourTripsList" layoutX="43.0" layoutY="40.0" prefHeight="114.0"
+                                          prefWidth="351.0"/>
+                                <ListView fx:id="yourTruckList" layoutX="43.0" layoutY="216.0" prefHeight="72.0"
+                                          prefWidth="353.0"/>
+                                <Label layoutX="43.0" layoutY="14.0" text="Your trips"/>
+                                <Label layoutX="43.0" layoutY="199.0" text="Your truck"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Cargo">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <TableView fx:id="cargoTable" maxHeight="-Infinity" maxWidth="-Infinity"
+                                           minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0"
+                                           prefWidth="511.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnId" prefWidth="75.0" text="id"/>
+                                        <TableColumn fx:id="columnAmount" prefWidth="75.0" text="amount"/>
+                                        <TableColumn fx:id="columnPrice" prefWidth="75.0" text="price"/>
+                                        <TableColumn fx:id="columnCollection" prefWidth="105.0"
+                                                     text="collection point"/>
+                                        <TableColumn fx:id="columnDelivery" prefWidth="105.0" text="delivery point"/>
+                                        <TableColumn fx:id="columnStatus" prefWidth="75.0" text="status"/>
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="createCargoBtn" layoutX="556.0" layoutY="14.0" mnemonicParsing="false"
+                                        onAction="#createCargo" text="Create Cargo"/>
+                                <Button fx:id="deleteCargoBtn" layoutX="556.0" layoutY="54.0" mnemonicParsing="false"
+                                        onAction="#deleteCargo" text="Delete Cargo"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Trucks">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="80.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="freeTruckList" layoutX="44.0" layoutY="51.0" prefHeight="422.0"
+                                          prefWidth="232.0"/>
+                                <Button fx:id="assignDriverToTruckBtn" layoutX="305.0" layoutY="51.0"
+                                        mnemonicParsing="false" onAction="#assignDriverToTruck" text="Assign driver"/>
+                                <Button fx:id="editTruckBtn" layoutX="306.0" layoutY="412.0" mnemonicParsing="false"
+                                        onAction="#editTruck" prefHeight="25.0" prefWidth="84.0" text="Edit Truck"/>
+                                <Button layoutX="307.0" layoutY="89.0" mnemonicParsing="false"
+                                        onAction="#viewTruckDetails" prefHeight="25.0" prefWidth="82.0" text="Details"/>
+                                <ListView fx:id="assignedTruckList" layoutX="432.0" layoutY="51.0" prefHeight="418.0"
+                                          prefWidth="237.0"/>
+                                <Label layoutX="120.0" layoutY="34.0" text="Free Trucks"/>
+                                <Label layoutX="508.0" layoutY="34.0" text="Assigned Trucks"/>
+                                <Button fx:id="addTruckBtn" layoutX="306.0" layoutY="376.0" mnemonicParsing="false"
+                                        onAction="#createTruck" prefHeight="25.0" prefWidth="83.0" text="Add Truck"/>
+                                <Button fx:id="deleteTruckBtn" layoutX="306.0" layoutY="448.0" mnemonicParsing="false"
+                                        onAction="#deleteTruck" text="Delete Truck"/>
+                                <Button fx:id="freeBtn" layoutX="313.0" layoutY="138.0" mnemonicParsing="false"
+                                        onAction="#unAssignTruck" text="Make free"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Trips">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="tripList" layoutX="51.0" layoutY="33.0" prefHeight="340.0"
+                                          prefWidth="209.0"/>
+                                <Button fx:id="addTripBtn" layoutX="297.0" layoutY="44.0" mnemonicParsing="false"
+                                        onAction="#createTrip" prefHeight="25.0" prefWidth="75.0" text="Add Trip"/>
+                                <Button fx:id="editTripBtn" layoutX="297.0" layoutY="89.0" mnemonicParsing="false"
+                                        onAction="#editTrip" prefHeight="25.0" prefWidth="75.0" text="Edit Trip"/>
+                                <Button fx:id="deleteTripBtn" layoutX="297.0" layoutY="128.0" mnemonicParsing="false"
+                                        onAction="#deleteTrip" text="Delete Trip"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="driversTab" text="Drivers">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="driverList" layoutX="69.0" layoutY="51.0" prefHeight="249.0"
+                                          prefWidth="226.0"/>
+                                <Button fx:id="detailsBtn" layoutX="322.0" layoutY="51.0" mnemonicParsing="false"
+                                        onAction="#showDetails" prefHeight="25.0" prefWidth="60.0" text="Details"/>
+                                <Button fx:id="editBtn" layoutX="322.0" layoutY="83.0" mnemonicParsing="false"
+                                        onAction="#updateDriver" prefHeight="25.0" prefWidth="60.0" text="Edit"/>
+                                <Button fx:id="deleteBtn" layoutX="322.0" layoutY="117.0" mnemonicParsing="false"
+                                        onAction="#deleteDriver" prefHeight="25.0" prefWidth="60.0" text="Delete"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="ForumTab" text="Forum">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="forumList" layoutX="14.0" layoutY="25.0" onMouseClicked="#loadComment"
+                                          prefHeight="372.0" prefWidth="234.0">
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#createForum"
+                                                          text="Add Forum"/>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </ListView>
+                                <TreeView fx:id="commentTree" layoutX="291.0" layoutY="48.0" prefHeight="340.0"
+                                          prefWidth="325.0">
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem fx:id="addItem" mnemonicParsing="false" onAction="#addComment"
+                                                          text="Reply"/>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TreeView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <ButtonBar layoutX="1011.0" layoutY="5.0" prefHeight="43.0" prefWidth="195.0"/>
+        <Button fx:id="logOutButton" layoutX="653.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOut"
+                text="Log Out"/>
+    </children>
+</AnchorPane>
